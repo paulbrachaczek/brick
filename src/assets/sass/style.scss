@@ -1,0 +1,131 @@
+@import 'variables';
+@import 'mixin';
+@import 'modifiers';
+@import 'atoms';
+@import 'molecules';
+@import 'organisms';
+
+@import 'icons';
+@import 'vendors';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+  font-size: 14px;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 16px;
+  }
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: $font-default;
+  font-weight: $light;
+  color: $text-color;
+  background: $background-color;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: $text-color;
+  &:hover {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+}
+
+button {
+  background: none;
+  border: none;
+  padding: none;
+  margin: none;
+
+  &:focus {
+    outline:0;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.5;
+  font-weight: $normal;
+}
+
+p {
+  margin: calculateEm(15px, 16px) 0;
+  font-size: calculateRem(16px);
+  font-weight: $light;
+  line-height: 1.5;
+  b {
+    font-weight: $normal;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1920px;
+  padding: 0;
+  position: relative;
+
+  &.animated {
+    position: absolute;
+  }
+
+  main & {
+    // padding: 0 4.8%;
+
+    @include media-breakpoint-up(xxl) {
+      max-width: 1740px;
+    }
+  }
+
+
+}
+main {
+
+  // @include media-breakpoint-up(xxl) {
+  //   padding: 0 90px;
+  // }
+}
+
+.figure {
+  display: block;
+  margin: 0;
+  line-height: 1;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    line-height: 1.5;
+  }
+}
+
+label {
+  line-height: 1.5;
+}

@@ -1,0 +1,33 @@
+.m-sortpanel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: calculateEm(10px, 16px) 0;
+  background-color: #eee;
+
+  &__cell {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    .m-input {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__button {
+    background-color: $white;
+    border: 1px solid $black;
+    margin-left: calculateEm(15px, 16px);
+    height: calculateEm(60px, 16px);
+    width: calculateEm(60px, 16px);
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}

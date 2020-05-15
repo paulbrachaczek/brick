@@ -1,0 +1,25 @@
+<section class="o-section -favourities">
+  <h2>
+    Favourite cities
+  </h2>
+  <p *ngIf='!favouriteCities'>
+    List is empty, add new city!
+  </p>
+  <ng-container *ngIf='favouriteCities'>
+    <div class="m-sortpanel" *ngIf='favouriteCities'>
+      <div class="m-sortpanel__cell">
+        <div class="m-input -input-text">
+          <input type="text" placeholder="Filter cities" [(ngModel)]="searchCityName">
+        </div>
+      </div>
+      <button (click)="sort(0)" class="icon-sort-name-up m-sortpanel__button"></button>
+      <button (click)="sort(1)" class="icon-sort-name-down m-sortpanel__button"></button>
+    </div>
+    <ul class="m-favourites">
+      <li *ngFor="let city of favouriteCities | cities: searchCityName: sortby" class="m-favourites__element">
+        <app-card [id]='city.id' [name]='city.name' [temp]="city.main.temp | number: '1.0-0'" [icon]='city.weather[0].icon' [humidity]='city.main.humidity' [desc]="city.weather[0].description"></app-card>
+      </li>
+    </ul>
+    <button (click)="removeAll()" class="a-button -primary">Remove all cities</button>
+  </ng-container>
+</section>

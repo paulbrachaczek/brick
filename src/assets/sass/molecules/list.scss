@@ -1,0 +1,15 @@
+.m-details-list {
+    margin: 0 calculateEm(-10px, 16px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include media-breakpoint-up(xl) {
+      justify-content: space-between;
+    }
+
+    &__element {
+      display: flex;
+      margin: calculateEm(10px, 16px);
+    }
+}

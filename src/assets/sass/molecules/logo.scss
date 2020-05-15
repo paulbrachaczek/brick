@@ -1,0 +1,12 @@
+.a-logo {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+
+  i {
+    font-style: normal;
+    color: $primary-color;
+  }
+}

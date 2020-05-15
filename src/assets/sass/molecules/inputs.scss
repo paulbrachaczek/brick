@@ -1,0 +1,71 @@
+.m-input {
+    $p : &;
+    position: relative;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: calculateRem(16px);
+    margin: calculateEm(15px, 16px) 0;
+    padding: 0;
+    align-items: center;
+    -ms-flex-pack: justify;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $text-color;
+      -webkit-box-shadow: 0 0 0px 1000px $white inset;
+    }
+
+    label {
+      margin: calculateEm(5px, 20px) 0;
+      font-size: calculateRem(20px);
+      color: $text-color;
+      width: 100%;
+      text-align: left;
+      padding: 0 calculateEm(10px, 20px);
+      @include media-breakpoint-up(sm) {
+        padding: 0 calculateEm(20px, 20px);
+      }
+      @include media-breakpoint-up(md) {
+        padding: 0;
+      }
+    }
+
+    &.-input-text {
+
+      padding: 0 0 calculateEm(15px, 16px);
+
+      input[type='text'], input[type='password'], input[type='email'], input[type='number'] {
+        outline: none;
+        height: calculateEm(40px, 16px);
+        width: 100%;
+        font-size: calculateRem(16px);
+        line-height: 1.5;
+        border: none;
+        border-bottom: 1px solid $input-border;
+        border-radius: calculateEm(0px, 16px);
+        margin: 0;
+        padding: calculateEm(5px, 16px) calculateEm(20px, 16px);
+        order: 3;
+        background: $white;
+        font-family: $font-default;
+        @include transition(all 0.15s linear 0s);
+
+        &:focus {
+          border-color: $input-border-active;
+          background: $input-background-active;
+        }
+      }
+    }
+  }

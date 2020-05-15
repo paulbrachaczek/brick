@@ -1,0 +1,71 @@
+.a-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: calculateEm(10px, 16px) calculateEm(10px, 16px) 0;
+    padding: 0 calculateEm(20px, 16px);
+    box-sizing: border-box;
+    border: 1px solid $primary-color;
+    text-decoration: none;
+    font-size: calculateRem(16px);
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+    @include transitionAll();
+
+    min-width: calculateEm(160px, 15px);
+    line-height: calculateLine(40px, 15px);
+    height: calculateEm(40px, 15px);
+
+
+    &:active, &:focus {
+      outline: none;
+    }
+
+    &.-primary {
+      background: $white;
+      color: $text-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+
+        &::after {
+          background: $white;
+        }
+      }
+    }
+
+    &.-secondary {
+      background: transparent;
+      color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+
+    }
+
+    &.-wauto {
+      min-width: auto;
+    }
+
+    &.-w100 {
+      width: 100%;
+    }
+
+    &.-lowercase {
+      text-transform: none;
+      font-size: caculateRem(14px);
+    }
+
+    &.-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }

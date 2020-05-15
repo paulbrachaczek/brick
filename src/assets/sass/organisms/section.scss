@@ -1,0 +1,54 @@
+.o-section {
+    $p: &;
+    position: relative;
+    width: 100%;
+    padding: calculateEm(15px, 16px) 0;
+    font-size: calculateRem(16px);
+
+    &.animated {
+        position: absolute;
+       // max-width: 100%;
+
+        // @include media-breakpoint-up(xxl) {
+        //     max-width: 1740px;
+        // };
+    }
+
+    &.-first {
+        position: relative;
+        text-align: right;
+        .m-autocomplete {
+            position: absolute;
+            top: calculateEm(125px, 16px);
+            left: 0;
+            background: $white;
+            right: 0;
+            text-align: left;
+        }
+        &.animated {
+            position: absolute;
+        }
+    }
+
+    &.-second {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        h2 {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+        @include media-breakpoint-up(lg) {
+            .m-list {
+                flex: 0 0 50%;
+            }
+
+            .m-city {
+                flex: 0 0 45%;
+            }
+        }
+
+    }
+
+}

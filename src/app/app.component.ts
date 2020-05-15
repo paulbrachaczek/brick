@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {FavService} from './services/fav.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'brick';
+  constructor(
+      private favService: FavService
+  ) {}
+
+  ngOnInit() {
+    this.favService.getFav();
+  }
 }

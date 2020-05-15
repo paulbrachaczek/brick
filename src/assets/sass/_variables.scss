@@ -1,0 +1,29 @@
+$font-default: 'Lato', sans-serif;
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+$white: #fff;
+$black: #000;
+
+$background-color: #eeeeee;
+$primary-color: #398AD7;
+$text-color: $black;
+
+$logo-background: #F8F8F8;
+
+$input-border: $black;
+$input-border-active: $primary-color;
+$input-background-active: $white;
+$error-border: red;
+$error-message: red;
+
+/* Media queries */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px
+) !default;

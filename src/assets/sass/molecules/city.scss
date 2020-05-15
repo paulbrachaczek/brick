@@ -1,0 +1,7 @@
+.m-city {
+    border: 1px solid $primary-color;
+    font-size: calculateRem(16px);
+    margin: calculateEm(10px, 16px) 0;
+    padding: calculateEm(15px, 16px);
+    flex: 0 0 100%;
+}

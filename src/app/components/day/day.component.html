@@ -1,0 +1,22 @@
+<div class="m-card -day">
+  <div class="m-card__date">
+    {{day.dt*1000|date}}
+  </div>
+  <figure class="m-figure m-card__figure">
+    <img [src]="'http://openweathermap.org/img/wn/'+day.weather[0].icon+'@2x.png'" alt="">
+  </figure>
+  <dl class="m-card__dl">
+    <dt class="m-card__dt -temp">tempreture</dt>
+      <dd class="m-card__dd -temp">{{day.temp.day | number: '1.0-0'}}°C</dd>
+    <dt class="m-card__dt">night</dt>
+    <dd class="m-card__dd"><b>{{day.temp.day | number: '1.0-0'}}°C</b></dd>
+    <dt class="m-card__dt">humidity</dt>
+      <dd class="m-card__dd">{{day.humidity}}</dd>
+    <dt class="m-card__dt">pressure</dt>
+      <dd class="m-card__dd">{{day.pressure}}</dd>
+    <dt class="m-card__dt">wind</dt>
+      <dd class="m-card__dd">{{day.wind_speed}} m/s</dd>
+    <dt class="m-card__dt -desc">description</dt>
+      <dd class="m-card__dd -desc">{{day.weather[0].description}}</dd>
+  </dl>
+</div>

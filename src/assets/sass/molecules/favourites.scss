@@ -1,0 +1,13 @@
+.m-favourites {
+  display: flex;
+  margin: 0 calculateEm(-5px, 16px);
+  justify-content: center;
+
+  @include media-breakpoint-up(xl) {
+    justify-content: flex-start;
+  }
+
+  &__element {
+    margin: calculateEm(10px, 16px);
+  }
+}

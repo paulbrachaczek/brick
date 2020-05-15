@@ -1,0 +1,7 @@
+<section class="o-section">
+  <div class="m-input -input-text">
+    <input type="text" placeholder="Search new city" (keyup.enter)="getCityFromInput($event.target.value)">
+  </div>
+  <app-card *ngIf="cityData" [id]='cityData.id' [lon]="cityData.coord.lon" [lat]="cityData.coord.lat" [name]='cityData.name' [humidity]='cityData.main.humidity' [desc]="cityData.weather[0].description" [icon]='cityData.weather[0].icon' [temp]="cityData.main.temp | number: '1.0-0'"></app-card>
+</section>
+<app-favourite></app-favourite>

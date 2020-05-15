@@ -1,0 +1,35 @@
+<section class="o-section">
+  <p>
+    <a routerLink="/">Go back</a>
+  </p>
+  <div class="m-card -details">
+    <h3 class="m-card__title">{{name}}</h3>
+    <figure class="m-figure m-card__figure">
+      <img [src]="'http://openweathermap.org/img/wn/'+now.weather[0].icon+'@2x.png'" alt="">
+    </figure>
+    <dl class="m-card__dl">
+      <dt class="m-card__dt -temp">tempreture</dt>
+      <dd class="m-card__dd -temp">{{now.temp | number: '1.0-0'}}°C</dd>
+      <dt class="m-card__dt">sunrise</dt>
+      <dd class="m-card__dd">{{sunrise}}</dd>
+      <dt class="m-card__dt">sunset</dt>
+      <dd class="m-card__dd">{{sunset}}</dd>
+      <dt class="m-card__dt">humidity</dt>
+      <dd class="m-card__dd">{{now.humidity}}</dd>
+      <dt class="m-card__dt">pressure</dt>
+      <dd class="m-card__dd">{{now.pressure}}</dd>
+      <dt class="m-card__dt">wind</dt>
+      <dd class="m-card__dd">{{now.wind_speed}} m/s</dd>
+      <dt class="m-card__dt -desc">description</dt>
+      <dd class="m-card__dd -desc">{{now.weather[0].description}}</dd>
+    </dl>
+  </div>
+  <p>
+    Weather for next 5 days
+  </p>
+  <ul class="m-details-list">
+    <li *ngFor="let day of days | slice:1:6" class="m-details-list__element">
+      <app-day [day]="day"></app-day>
+    </li>
+  </ul>
+</section>

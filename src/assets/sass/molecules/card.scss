@@ -1,0 +1,93 @@
+.m-card {
+  $p: &;
+  position: relative;
+  padding: calculateEm(10px, 16px);;
+  min-width: calculateEm(260px, 16px);
+  max-width: calculateEm(260px, 16px);
+  width: 100%;
+  background: $white;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba($color: #999, $alpha: 1.0);
+  min-height: calculateEm(200px, 16px);
+  text-align: center;
+
+  h3 {
+    text-align: left;
+  }
+
+  &.-day {
+    min-width: calculateEm(250px, 16px);
+  }
+
+  &.-details {
+    max-width: 100%;
+
+    h3 {
+      font-size: calculateRem(30px);
+
+      @include media-breakpoint-up(md) {
+        font-size: calculateRem(60px);
+      }
+    }
+
+    #{$p}__figure {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-size: calculateRem(30px);
+    font-weight: $light;
+    text-transform: uppercase;
+  }
+
+  &__figure {
+    text-align: right;
+  }
+
+  &__fav {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__dl {
+    margin: 0 0 calculateEm(10px, 16px);
+    overflow: hidden;
+    text-align: left;
+  }
+
+  &__dt {
+    float: left;
+    clear: left;
+    margin-right: 5px;
+
+    &.-temp, &.-desc {
+      display: none;
+    }
+  }
+
+  &__date {
+    margin: calculateEm(-10px, 16px);
+    background: $black;
+    color: $white;
+    text-align: center;
+    font-weight: $bold;
+    padding: calculateEm(5px, 16px);
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__dd {
+    float: left;
+
+    &.-temp {
+      font-size: calculateRem(60px);
+      font-weight: $normal;
+    }
+
+    &.-desc {
+      clear: left;
+    }
+  }
+
+}

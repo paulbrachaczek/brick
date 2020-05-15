@@ -1,0 +1,18 @@
+<div class="m-card">
+  <button class="m-card__fav" [class]="{'icon-heart':fav,'icon-heart-empty':!fav}" (click)="addToFav(name, id,lon,lat)">{{favText}}</button>
+  <figure class="m-figure m-card__figure">
+    <img [src]="'http://openweathermap.org/img/wn/'+icon+'@2x.png'" alt="">
+  </figure>
+  <dl class="m-card__dl">
+    <dt class="m-card__dt -temp">tempre</dt>
+      <dd class="m-card__dd -temp">{{temp}}°C</dd>
+    <dt class="m-card__dt">humidity</dt>
+      <dd class="m-card__dd">{{humidity}}</dd>
+    <dt class="m-card__dt -desc">description</dt>
+      <dd class="m-card__dd -desc">{{desc}}</dd>
+  </dl>
+  <h3 class="m-card__title">{{name}}</h3>
+  <a class="a-button -primary -center" routerLink="/details/{{id}}">
+    See more
+  </a>
+</div>
